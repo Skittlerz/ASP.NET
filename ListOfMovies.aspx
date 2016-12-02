@@ -5,15 +5,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="deleteMovie" SelectMethod="getMovies" TypeName="MovieManager" UpdateMethod="updateMovie">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="deleteMovie" SelectMethod="getMovies" TypeName="MovieManager" UpdateMethod="updateMovie" InsertMethod="insertMovie">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32"/>
             </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="id" Type="Int32" />
+                <asp:Parameter Name="title" Type="String" />
+                <asp:Parameter Name="director" Type="String" />
+                <asp:Parameter Name="description" Type="String" />
+                <asp:Parameter Name="InTheatres" Type="Boolean" />
+            </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="id" Type="Int32" />
                 <asp:Parameter Name="title" Type="String" />
@@ -39,6 +51,47 @@
                 <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
             </Columns>
         </asp:GridView>
+        <asp:Panel ID="Panel1" runat="server">
+            <table class="auto-style1">
+            <tr>
+                <td>Title:</td>
+                <td>
+                    <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>Director:</td>
+                <td>
+                    <asp:TextBox ID="txtDirector" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>Now Playing:</td>
+                <td>
+                    <asp:CheckBox ID="cbInTheatres" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">Category:</td>
+                <td class="auto-style2">
+                    <asp:DropDownList ID="ddlMovieCat" runat="server" DataSourceID="ObjectDataSource2" DataTextField="Category" DataValueField="Id">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>
+                    <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:LinkButton ID="lbAdd" runat="server" OnClick="lbAdd_Click">Add</asp:LinkButton>
+                </td>
+            </tr>
+        </table>
+        </asp:Panel>
+        <br />
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource2" DataTextField="Category" DataValueField="Id">
         </asp:DropDownList>
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource3">

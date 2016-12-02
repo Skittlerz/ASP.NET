@@ -17,8 +17,8 @@
     <a href="DataListDemo.aspx">DataList Demo</a><br />
     <a href="DataListExerciseUsingJoin.aspx">DataList usding Inner Join</a><br />
     <a href="FunWithRepeaters.aspx">Fun with repeaters</a><br />
-    <a href="GridViewUpdates.aspx">GridView Updates</a>
-    <a href="ListOfMovies.aspx">List Of Movies</a>
+    <a href="GridViewUpdates.aspx">GridView Updates</a><br />
+    <a href="ListOfMovies.aspx">List Of Movies</a><br />
     </div>
     </form>
 </body>

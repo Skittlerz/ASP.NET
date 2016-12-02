@@ -11,4 +11,25 @@ public partial class ListOfMovies : System.Web.UI.Page
     {
 
     }
+
+    protected void lbAdd_Click(object sender, EventArgs e)
+    {
+
+        Movie m = new Movie();
+        m.Title = txtTitle.Text;
+        m.Director = txtDirector.Text;
+        m.Description = txtDescription.Text;
+        m.InTheatres = cbInTheatres.Checked;
+        m.CategoryId = Convert.ToInt32(ddlMovieCat.SelectedValue);
+
+        MovieManager mrManager = new MovieManager();
+        mrManager.insertMovie(m);
+
+        GridView1.DataBind();
+
+
+        txtTitle.Text = "";
+        txtDirector.Text = "";
+        txtDescription.Text = "";
+    }
 }

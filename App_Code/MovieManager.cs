@@ -114,6 +114,29 @@ public class MovieManager
         con.Close();
         return movies;
     }
+
+    public void insertMovie(Movie m)
+    {
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+
+        SqlCommand cmd =
+            new SqlCommand("Insert INTO MOVIES (Title, Director, Description, CategoryID) VALUES (@Title, @Director, @Description, @CategoryId)");
+
+        cmd.Connection = con;
+
+        cmd.Parameters.AddWithValue("Title", m.Title);
+        cmd.Parameters.AddWithValue("Director", m.Director);
+        cmd.Parameters.AddWithValue("Description", m.Description);
+        cmd.Parameters.AddWithValue("CategoryId", m.CategoryId);
+        //cmd.Parameters.AddWithValue("InTheaters", m.InTheatres);
+
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+    }
     public void updateMovie(int id, String title, string director, string description)
     {
         SqlConnection con = new SqlConnection();
