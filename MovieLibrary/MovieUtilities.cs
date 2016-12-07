@@ -13,5 +13,12 @@ namespace MovieLibrary
             MovieData md = new MovieData();
             return md.getMovies();
         }
+
+        public void updateMovie(int id, String title, String director, String description)
+        {
+            Movie movie = new Movie(id, title, director, description);
+            MovieData md = new MovieData();
+            md.movieUpdate(movie);
+        }
     }
 }

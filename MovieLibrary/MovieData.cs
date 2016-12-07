@@ -35,5 +35,22 @@ namespace MovieLibrary
             con.Close();
             return movies;
         }
+
+        public void movieUpdate(Movie MovieToUpdate)
+        {
+            SqlConnection con = new SqlConnection(Connections.ConnectionString());
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "UPDATE Movies SET Title=@Title,Director=@Director,Description=@Description WHERE Id=@Id";
+            cmd.Parameters.AddWithValue("@Title", MovieToUpdate.Title);
+            cmd.Parameters.AddWithValue("@Director", MovieToUpdate.Director);
+            cmd.Parameters.AddWithValue("@Id", MovieToUpdate.Id);
+            cmd.Parameters.AddWithValue("@Description", MovieToUpdate.Description);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
     }
 }
