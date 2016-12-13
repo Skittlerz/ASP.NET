@@ -61,6 +61,41 @@ public class MovieManager
         con.Close();
         return categories;
     }
+
+    public void insertMovieCategory(String name)
+    {
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+
+        SqlCommand cmd = new SqlCommand("INSERT INTO MovieCategories (Name) VALUES (@Name)");
+
+        cmd.Connection = con;
+
+        cmd.Parameters.AddWithValue("Name", name);
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+
+    public void updateMovieCategory(int id, String category)
+    {
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+
+        SqlCommand cmd =
+            new SqlCommand("Update MovieCategories Set Name=@Name Where Id=@Id");
+
+        cmd.Connection = con;
+
+        cmd.Parameters.AddWithValue("Name", category);
+        cmd.Parameters.AddWithValue("Id", id);
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+    }
     public List<Movie> getMovies()
     {
         List<Movie> movies = new List<Movie>();
@@ -100,6 +135,34 @@ public class MovieManager
         cmd.Connection = con;
 
         cmd.Parameters.AddWithValue("Id", cat);
+
+        con.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+        while (reader.Read())
+        {
+            movies.Add(new Movie(Convert.ToInt32(reader["id"]), reader["title"].ToString(),
+                reader["director"].ToString(), reader["description"].ToString()));
+        }
+
+        con.Close();
+        return movies;
+    }
+
+    public List<Movie> getMoviesByDirector(String director)
+    {
+        List<Movie> movies = new List<Movie>();
+
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+
+        SqlCommand cmd =
+            new SqlCommand("Select Id, Title, Director, Description From Movies WHERE Director=@Director");
+
+        cmd.Connection = con;
+
+        cmd.Parameters.AddWithValue("Director", director);
 
         con.Open();
 

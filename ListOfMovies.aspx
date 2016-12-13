@@ -15,17 +15,10 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="deleteMovie" SelectMethod="getMovies" TypeName="MovieManager" UpdateMethod="updateMovie" InsertMethod="insertMovie">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="deleteMovie" SelectMethod="getMovies" TypeName="MovieManager" UpdateMethod="updateMovie">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32"/>
             </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="id" Type="Int32" />
-                <asp:Parameter Name="title" Type="String" />
-                <asp:Parameter Name="director" Type="String" />
-                <asp:Parameter Name="description" Type="String" />
-                <asp:Parameter Name="InTheatres" Type="Boolean" />
-            </InsertParameters>
             <UpdateParameters>
                 <asp:Parameter Name="id" Type="Int32" />
                 <asp:Parameter Name="title" Type="String" />
