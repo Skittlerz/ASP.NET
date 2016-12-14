@@ -18,7 +18,9 @@
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="Title" DataValueField="Title">
         </asp:DropDownList>
         <asp:Button ID="Button1" runat="server" style="height: 26px" Text="Schedule" OnClick="Button1_Click" />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <p>
+        <asp:Label ID="Label1" runat="server" Text="Playing"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

@@ -34,9 +34,7 @@ public partial class TestReview4 : System.Web.UI.Page
         {
             playing = schedule[x, y];
             c.BackColor = Color.Aqua;
-            c.Controls.Add(new LiteralControl("<p>"));
-            c.Controls.Add(new LiteralControl(playing));
-            c.Controls.Add(new LiteralControl("</p>"));
+            
         }
 
 
@@ -61,6 +59,12 @@ public partial class TestReview4 : System.Web.UI.Page
         int x = Calendar1.SelectedDate.Month;
         int y = Calendar1.SelectedDate.Day;
 
-        Label1.Text = schedule[x, y];
+        if (schedule[x, y] != null)
+        {
+            Label1.Text = schedule[x, y];
+        }else
+        {
+            Label1.Text = "Playing";
+        }
     }
 }
