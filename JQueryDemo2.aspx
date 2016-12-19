@@ -8,6 +8,8 @@
     <script>
         var sat = "Life is Good";
         var sun = "Stay Home";
+        var now = new Date().getDay();
+    
 
         $(document).ready(function () {
             $("#sat").click(function () {
@@ -19,7 +21,14 @@
             });
 
             $("#mon").click(function () {
-                $.get("Comp235\Horoscopes\Monday.txt", function (h, status) {
+                $.get("Horoscopes/Monday.txt", function (h, status) {
+                    //alert("Data: " + data + "\nStatus: " + status);
+                    $("#horoscope").html(h);
+                });
+            });
+
+            $("#today").click(function () {
+                $.get("Horoscopes/" + now + ".txt", function (h, status) {
                     //alert("Data: " + data + "\nStatus: " + status);
                     $("#horoscope").html(h);
                 });
@@ -41,6 +50,10 @@
 
     <div id="mon">
         Monday
+    </div>
+
+    <div id="today">
+        Today
     </div>
     <hr />
     <div id="horoscope">

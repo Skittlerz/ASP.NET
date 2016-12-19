@@ -15,10 +15,13 @@
     <a href="CalendarControl.aspx">Calendar Control</a><br />
     <a href="MeetingScheduler.aspx">Meeting Scheduler</a><br />
     <a href="DataListDemo.aspx">DataList Demo</a><br />
-    <a href="DataListExerciseUsingJoin.aspx">DataList usding Inner Join</a><br />
+    <a href="DataListExerciseUsingJoin.aspx">DataList using Inner Join</a><br />
     <a href="FunWithRepeaters.aspx">Fun with repeaters</a><br />
     <a href="GridViewUpdates.aspx">GridView Updates</a><br />
     <a href="ListOfMovies.aspx">List Of Movies</a><br />
+    <a href="JQueryDemo1.aspx">JQuery Demo 1</a><br />
+    <a href="JQueryDemo2.aspx">JQuery Demo 2</a><br />
+    <a href="GoMapDemo.aspx">Go Map Demo</a><br />
     </div>
     </form>
 </body>
