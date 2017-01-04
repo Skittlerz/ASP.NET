@@ -60,11 +60,11 @@ private bool CheckFileType(string fileName)
         }
     }
 
-public void deleteFile()
-    {
-        QueryStringParameter file;
+//public void deleteFile()
+    //{
+       // QueryStringParameter file;
 
         
-    }
+    //}
 
 }

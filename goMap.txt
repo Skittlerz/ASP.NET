@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GoMapDemo.aspx.cs" Inherits="GoMapDemo" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GoMapDemo.aspx.cs" Inherits="GoMapDemo" %>
 
 <!DOCTYPE html>
 
@@ -15,6 +15,8 @@
             initMap();
         });
     </script>
+	/* Following script grabbed from 
+	https://developers.google.com/maps/documentation/javascript/adding-a-google-map */ 
     <script>
       function initMap() {
         var uluru = { lat: 50.3916, lng: -105.5349 };
@@ -34,7 +36,7 @@
         width:700px; 
         height:400px; 
     } 
-    /* Info window  size (optional) */ 
+    /* Info window size (optional) */ 
     .gomapMarker { 
         display: block; 
         width: 150px; 
