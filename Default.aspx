@@ -22,6 +22,7 @@
     <a href="JQueryDemo1.aspx">JQuery Demo 1</a><br />
     <a href="JQueryDemo2.aspx">JQuery Demo 2</a><br />
     <a href="GoMapDemo.aspx">Go Map Demo</a><br />
+    <a href="WeatherReports.aspx">Weather Reports</a><br />
     </div>
     </form>
 </body>

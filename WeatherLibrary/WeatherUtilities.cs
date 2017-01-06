@@ -63,14 +63,14 @@ namespace WeatherLibrary
             return reports;
         }
     
-        public WeatherReport getMostRecentReport()
+        public List<WeatherReport> getMostRecentReport()
         {
-            WeatherReport report = new WeatherReport();
+            List<WeatherReport> report = new List<WeatherReport>();
             SqlConnection con = new SqlConnection();
             con.ConnectionString = conString;
 
             SqlCommand cmd =
-                new SqlCommand("SELECT TOP 1 [Lat],[Lon],[Facing],[TimeSubmitted] FROM[WeatherReports12].[dbo].[Reports] order by TimeSubmitted");
+                new SqlCommand("SELECT TOP 1 [Lat],[Lon],[Facing],[TimeSubmitted] FROM[WeatherReports12].[dbo].[Reports] order by TimeSubmitted desc");
 
             cmd.Connection = con;
 
@@ -78,9 +78,11 @@ namespace WeatherLibrary
 
             SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
-             report = new WeatherReport(Convert.ToSingle(reader["Lat"]), Convert.ToSingle(reader["Lon"]),
-                    Convert.ToSingle(reader["Facing"]), Convert.ToDateTime(reader["TimeSubmitted"]));
-            
+            while (reader.Read())
+            {
+                report.Add(new WeatherReport(Convert.ToSingle(reader["Lat"]), Convert.ToSingle(reader["Lon"]),
+                    Convert.ToSingle(reader["Facing"]), Convert.ToDateTime(reader["TimeSubmitted"])));
+            }
             con.Close();
 
             return report;
