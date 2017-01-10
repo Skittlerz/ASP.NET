@@ -10,8 +10,8 @@ public partial class WeatherReports : System.Web.UI.Page
 {
     WeatherUtilities wu;
     List<WeatherReport> reports;
-    public int iCounter = 1;
-    // WeatherReport mostRecent;
+    public int iCounter = 0;
+    
 
     protected void Page_Load(object sender, EventArgs e)
     {

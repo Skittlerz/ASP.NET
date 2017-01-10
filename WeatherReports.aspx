@@ -60,7 +60,7 @@
      <div>
             <asp:Repeater ID="rptReports" runat="server">
                 <ItemTemplate>
-                    <% if (iCounter == 1) { %>
+                    <% if (iCounter == 0) { %>
                    <span id="first" class="coord" hidden="hidden"><%# Eval("Latitude") %>x<%# Eval("Longitude") %></span>
                     <% } else { %>
                     <span class="coord" hidden="hidden"><%# Eval("Latitude") %>x<%# Eval("Longitude") %></span>
