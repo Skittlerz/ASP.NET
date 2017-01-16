@@ -150,6 +150,34 @@ public class MovieManager
         return movies;
     }
 
+    public List<Movie> getMoviesByTitle(String title)
+    {
+        List<Movie> movies = new List<Movie>();
+
+        SqlConnection con = new SqlConnection();
+        con.ConnectionString = connectionString;
+
+        SqlCommand cmd =
+            new SqlCommand("Select Id, Title, Director, Description From Movies WHERE Title LIKE @title");
+
+        cmd.Connection = con;
+
+        cmd.Parameters.AddWithValue("title", title);
+
+        con.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+        while (reader.Read())
+        {
+            movies.Add(new Movie(Convert.ToInt32(reader["id"]), reader["title"].ToString(),
+                reader["director"].ToString(), reader["description"].ToString()));
+        }
+
+        con.Close();
+        return movies;
+    }
+
     public List<Movie> getMoviesByDirector(String director)
     {
         List<Movie> movies = new List<Movie>();
