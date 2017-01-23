@@ -24,10 +24,14 @@
         <li><a href="JQueryDemo2.aspx">JQuery Demo 2</a></li>
         <li><a href="GoMapDemo.aspx">Go Map Demo</a></li>
         <li><a href="WeatherReports.aspx">Weather Reports</a></li>
-        <li><a href="AjaxDemo4-ProgrammaticUpdates.aspx">Ajax Exercise 5-programmatic updates</a></li>
+        <li><a href="AjaxDemo-Intro.aspx">Ajax Exercise 1- Intro</a></li>
+        <li><a href="AjaxDemo2-CascadingControls.aspx">Ajax Exercise 2- Cascasding Controls</a></li>
+        <li><a href="AjaxDemo3-4 - UpdateTriggers.aspx">Ajax Exercise 3 & 4- Update Triggers</a></li>
+        <li><a href="AjaxDemo5-ProgrammaticUpdates.aspx">Ajax Exercise 5- programmatic updates</a></li>
         <li><a href="AjaxDemo6.aspx">Ajax Exercise 6- Preventing Update Interrupts</a></li>
         <li><a href="AjaxDemo7.aspx">Ajax Exercise 7- Cancelling an Ajax call</a></li>
         <li><a href="ServiceReferenceUser.aspx">Welcome to Web Services</a></li>
+        <li><a href="WebServicesDemo.aspx">Web Services Movie Demo</a></li>
     </ol>
     </div>
     </form>

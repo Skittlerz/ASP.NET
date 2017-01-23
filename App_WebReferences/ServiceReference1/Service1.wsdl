@@ -25,6 +25,18 @@
   <wsdl:message name="IService1_Welcome_OutputMessage">
     <wsdl:part name="parameters" element="tns:WelcomeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetAllMovies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllMovies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMovieByTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieByTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMovieByTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMovieByTitleResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -37,6 +49,14 @@
     <wsdl:operation name="Welcome">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Welcome" message="tns:IService1_Welcome_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/WelcomeResponse" message="tns:IService1_Welcome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllMovies" message="tns:IService1_GetAllMovies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllMoviesResponse" message="tns:IService1_GetAllMovies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovieByTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMovieByTitle" message="tns:IService1_GetMovieByTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMovieByTitleResponse" message="tns:IService1_GetMovieByTitle_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -61,6 +81,24 @@
     </wsdl:operation>
     <wsdl:operation name="Welcome">
       <soap:operation soapAction="http://tempuri.org/IService1/Welcome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllMovies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovieByTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMovieByTitle" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
