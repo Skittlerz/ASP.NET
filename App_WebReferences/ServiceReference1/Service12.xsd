@@ -21,4 +21,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Movie" nillable="true" type="tns:Movie" />
+  <xs:complexType name="ArrayOfMovieCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MovieCategory" nillable="true" type="tns:MovieCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovieCategory" nillable="true" type="tns:ArrayOfMovieCategory" />
+  <xs:complexType name="MovieCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MovieCategory" nillable="true" type="tns:MovieCategory" />
 </xs:schema>
