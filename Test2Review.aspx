@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
+      <script>
         $(document).ready(function () {
 
             $(".MovieTitle").each(function (index) {
@@ -23,9 +23,9 @@
     <div>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-        <%-- <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
+         <asp:UpdatePanel ID="UpdatePanel1" runat="server"> 
 
-            <ContentTemplate> --%>
+            <ContentTemplate> 
         <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
         </asp:DropDownList>
                 <asp:DataList ID="DataList1" runat="server">
@@ -41,11 +41,24 @@
                 </asp:DataList>
         <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
-           <%--  </ContentTemplate>
+           </ContentTemplate>
 
-        </asp:UpdatePanel> --%>
+        </asp:UpdatePanel>
     
     </div>
     </form>
-</body>
+    </body>
+    <script>
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        prm.add_endRequest(function () {
+
+            $(".MovieTitle").each(function (index) {
+               
+                $(this).click(function () {
+                    $(this).children().show();
+                });
+            });
+        });
+    </script>
 </html>

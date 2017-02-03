@@ -49,6 +49,18 @@
   <wsdl:message name="IService1_GetAllMovieCategories_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllMovieCategoriesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetAllStocks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStocks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllStocks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetStockByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByCode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetStockByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockByCodeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -77,6 +89,14 @@
     <wsdl:operation name="GetAllMovieCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllMovieCategories" message="tns:IService1_GetAllMovieCategories_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllMovieCategoriesResponse" message="tns:IService1_GetAllMovieCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStocks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllStocks" message="tns:IService1_GetAllStocks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllStocksResponse" message="tns:IService1_GetAllStocks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetStockByCode" message="tns:IService1_GetStockByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetStockByCodeResponse" message="tns:IService1_GetStockByCode_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -137,6 +157,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllMovieCategories">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllMovieCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStocks">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllStocks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockByCode">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetStockByCode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

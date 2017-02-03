@@ -31,7 +31,8 @@
         <li><a href="AjaxDemo6.aspx">Ajax Exercise 6- Preventing Update Interrupts</a></li>
         <li><a href="AjaxDemo7.aspx">Ajax Exercise 7- Cancelling an Ajax call</a></li>
         <li><a href="ServiceReferenceUser.aspx">Welcome to Web Services</a></li>
-        <li><a href="WebServicesDemo.aspx">Web Services Movie Demo</a></li>
+        <li><a href="WebServicesDemo.aspx">Web Services - Movie Demo</a></li>
+         <li><a href="ServiceReferenceUser.aspx">Web Services - Search Movie</a></li>
     </ol>
     </div>
     </form>

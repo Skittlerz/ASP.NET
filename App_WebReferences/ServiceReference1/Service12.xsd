@@ -34,4 +34,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MovieCategory" nillable="true" type="tns:MovieCategory" />
+  <xs:complexType name="ArrayOfStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Stock" nillable="true" type="tns:Stock" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStock" nillable="true" type="tns:ArrayOfStock" />
+  <xs:complexType name="Stock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="StockCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Stock" nillable="true" type="tns:Stock" />
 </xs:schema>
